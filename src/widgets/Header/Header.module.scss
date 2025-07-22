@@ -13,7 +13,7 @@
     margin: 0 auto;
 
     .title {
-        font-weight: 700;
+        font-weight: 400;
         @include responsive-font(28px, 18px);
         color: $primary-color;
     }

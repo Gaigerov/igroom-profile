@@ -14,5 +14,6 @@ export const sfProDisplay = LocalFont({
         },
     ],
     display: 'swap',
-    variable: '--font-sf-pro-display'
+    variable: '--font-sf-pro-display',
+    preload: true,
 });

@@ -73,7 +73,7 @@ const ProfileInfo = () => {
                 </h1>
                 <div className={styles.metaInfo}>
                     <span className={styles.username}>{profileData.username}</span>
-                    <span className={styles.time}>завтра 18:00</span>
+                    <span className={styles.time}>Вчера 18:00</span>
                 </div>
             </div>
 

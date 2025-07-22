@@ -12,8 +12,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="ru" className={sfProDisplay.variable} suppressHydrationWarning >
-            <body suppressHydrationWarning>{children}</body>
+        <html lang="ru" className={sfProDisplay.className}>
+            <body>{children}</body>
         </html>
     );
 }

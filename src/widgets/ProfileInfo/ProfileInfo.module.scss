@@ -53,7 +53,7 @@
     color: $text-color;
     border-radius: 50%;
     @include flex-center;
-    font-style: bold;
+    font-weight: 700;
     font-size: 28px;
 }
 
@@ -93,7 +93,6 @@
 }
 
 .rumerLabel {
-    font-family: 'SF Pro';
     font-weight: 400;
     font-style: Regular;
     font-size: 22px;
@@ -104,7 +103,6 @@
 }
 
 .rumerName {
-    font-family: 'SF Pro';
     font-weight: 700;
     font-style: Bold;
     font-size: 22px;
@@ -112,7 +110,7 @@
     letter-spacing: -0.26px;
     text-align: center;
     vertical-align: middle;
-    width: max-content;
+    width: 50%;
 }
 
 .metaInfo {

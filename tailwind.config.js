@@ -12,7 +12,7 @@ export const theme = {
             foreground: 'var(--foreground)',
         },
         fontFamily: {
-            sans: ['var(--font-sf-pro-display)', 'Arial', 'sans-serif'],
+            sans: ['sfProDisplay', 'sans-serif'],
         },
     },
 };

@@ -2,7 +2,6 @@
 @use '@/shared/styles/mixins' as *;
 
 * {
-    font-family: var(--font-sf-pro-display), 'Arial', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -11,6 +10,7 @@
 }
 
 body {
+    font-family: sfProDisplay, -apple-system, BlinkMacSystemFont, sans-serif;
     min-width: 320px;
     overflow-x: hidden;
     background-color: $background;
