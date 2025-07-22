@@ -1,5 +1,3 @@
-Вот обновленный `README.md` для вашего проекта, учитывающий текущую конфигурацию:
-
 ```markdown
 # Igroom Profile Application
 
