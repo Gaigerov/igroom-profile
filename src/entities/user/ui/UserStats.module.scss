@@ -1,0 +1,37 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.stats {
+    @include flex-between;
+    padding: 15px 0;
+    margin: 20px 0;
+}
+
+.statsItem {
+    text-align: center;
+    flex: 1;
+    padding: 10px;
+}
+
+.divider {
+    width: 1px;
+    height: 100%;
+    background: $text-color;
+    margin: auto 0;
+}
+
+.statsValue {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: $text-color;
+
+    @include desktop {
+        font-size: 1.5rem;
+    }
+}
+
+.statsLabel {
+    color: $text-light;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}

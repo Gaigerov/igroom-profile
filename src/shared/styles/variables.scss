@@ -1,0 +1,38 @@
+// Цвета
+$primary-color: #A7A7A7; // Салатовый
+$secondary-color: #9500FF; // Фиолетовый
+$accent-color: #00CF00; // Оранжевый
+$orange-color: #FFA100;
+$text-color: #171717;
+$text-light: #6B7280;
+$background: #EEEEEE;
+$foreground: #FFFFFF;
+$border-color: #E5E7EB;
+$error-color: #EF4444;
+
+// Размеры
+$header-height: 60px;
+$footer-height: 70px;
+$border-radius: 25px;
+$container-padding: 16px;
+
+// Точки останова
+$mobile-breakpoint: 480px;
+$tablet-breakpoint-min: 481px;
+$tablet-breakpoint-max: 1023px;
+$desktop-breakpoint: 1024px;
+
+// Тени
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-md: 18px;
+$font-size-lg: 24px;
+$font-size-xl: 32px;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-md: 1.75;

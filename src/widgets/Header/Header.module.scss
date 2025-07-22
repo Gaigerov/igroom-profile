@@ -1,0 +1,28 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+    @include flex-between;
+    height: $header-height;
+    padding: 0 $container-padding;
+    border-bottom: 1px solid $border-color;
+    background: $background;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 390px;
+    margin: 0 auto;
+
+    &__title {
+        font-weight: 700;
+        @include responsive-font(28px, 18px);
+    }
+
+    &__menuButton {
+        @include button-reset;
+        width: 40px;
+        height: 40px;
+        border: none;
+        @include flex-center;
+    }
+}
