@@ -3,7 +3,7 @@
 import {useEffect} from 'react';
 import {Provider} from 'react-redux';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
-import {makeStore, AppStore, RootState} from '@/shared/lib/redux/store';
+import {makeStore, RootState} from '@/shared/lib/redux/store';
 import {useAppDispatch, useAppSelector} from '@/shared/lib/redux/hooks';
 import {fetchProfileClient} from '@/entities/user/api/profileApi';
 import {
@@ -18,12 +18,11 @@ import ProfileInfo from '@/widgets/ProfileInfo/ProfileInfo';
 const queryClient = new QueryClient();
 
 interface ProfilePageClientProps {
-    initialState?: RootState;
+    initialState?: Partial<RootState>;
 }
 
 export default function ProfilePageClient({initialState}: ProfilePageClientProps) {
-
-    const store: AppStore = makeStore(initialState);
+    const store = makeStore(initialState);
 
     return (
         <Provider store={store}>

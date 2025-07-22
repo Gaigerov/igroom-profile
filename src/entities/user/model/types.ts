@@ -4,13 +4,18 @@ export type UserStats = {
     rumers: number;
 };
 
-export type User = {
+export interface User {
     id: string;
-    avatarUrl: string;
+    avatarUrl?: string;
     name: string;
     username: string;
     city: string;
     description: string;
     telegram: string;
-    stats: UserStats;
-};
+    stats: {
+        months: number;
+        meets: number;
+        rumers: number;
+    };
+}
+

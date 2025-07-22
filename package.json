@@ -3,12 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "predev": "mkdir -p public/static/fonts && cp src/shared/config/fonts/*.otf public/static/fonts/",
-        "prebuild": "mkdir -p public/static/fonts && cp src/shared/config/fonts/*.otf public/static/fonts/",
-        "clean": "rm -rf .next && rm -rf node_modules/.cache",
-        "dev": "npm run clean && next dev",
-        "build": "npm run prebuild && next build",
-        "start": "next start"
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "clean": "rm -rf .next && rm -rf node_modules/.cache"
     },
     "dependencies": {
         "@reduxjs/toolkit": "2.8.2",

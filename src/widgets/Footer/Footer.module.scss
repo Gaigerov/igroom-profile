@@ -3,23 +3,33 @@
 
 .footer {
     @include flex-arround;
-    height: $footer-height;
-    padding: 0 16px;
-    border-top: 1px solid $border-color;
+    padding: 10px 16px;
     background: $background;
     bottom: 0;
     z-index: 100;
-    max-width: 390px;
+    width: 100%;
+    max-width: 390px; 
     margin: 0 auto;
+    position: sticky;
 
-    &__icon {
-        width: 24px;
-        height: 24px;
-        border: none;
+    .iconButton {
+        @include button-reset;
+        width: 36px;
+        height: 36px;
         @include flex-center;
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, filter 0.2s ease;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
 
-        &:hover {
+        .icon {
+            filter: $icon-filter-default;
+            height: max-content;
+            width: max-content;
+        }
+
+        &:hover .icon {
+            filter: $icon-filter-hover;
             transform: scale(1.1);
         }
     }

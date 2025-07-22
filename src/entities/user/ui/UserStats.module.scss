@@ -3,35 +3,33 @@
 
 .stats {
     @include flex-between;
-    padding: 15px 0;
-    margin: 20px 0;
 }
 
 .statsItem {
     text-align: center;
     flex: 1;
-    padding: 10px;
-}
+    position: relative;
 
-.divider {
-    width: 1px;
-    height: 100%;
-    background: $text-color;
-    margin: auto 0;
+    &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 80%;
+        background: $primary-color;
+    }
 }
 
 .statsValue {
     font-weight: bold;
-    font-size: 1.25rem;
-    color: $text-color;
-
-    @include desktop {
-        font-size: 1.5rem;
-    }
+    font-size: 24px;
+    color: $text-light;
 }
 
 .statsLabel {
     color: $text-light;
-    font-size: 0.8rem;
+    font-size: 18px;
     margin-top: 4px;
 }

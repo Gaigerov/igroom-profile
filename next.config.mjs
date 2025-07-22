@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
     experimental: {
         appDir: true,
+        esmExternals: 'loose',
     },
     images: {
         remotePatterns: [
@@ -21,33 +22,32 @@ const nextConfig = {
             },
         ],
         unoptimized: true,
+        domains: ['igroom.ru'],
+    },
+    logging: {
+        level: 'verbose',
     },
     sassOptions: {
         includePaths: [path.join(__dirname, 'src', 'shared', 'styles')],
         additionalData: `
-      @use "variables.scss" as *;
-      @use "mixins.scss" as *;
-    `,
+        @use "variables.scss" as *;
+        @use "mixins.scss" as *;
+        `,
     },
-    webpack: (config, {isServer}) => {
+    webpack: (config) => {
         config.module.rules.push({
-            test: /\.(otf)$/i,
-            type: 'asset/resource',
-            generator: {
-                filename: 'static/fonts/[name][ext]',
-            },
+            test: /\.svg$/i,
+            issuer: /\.[jt]sx?$/,
+            use: [
+                {
+                    loader: '@svgr/webpack',
+                    options: {
+                        svgo: false,
+                        titleProp: true,
+                    }
+                }
+            ]
         });
-
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: ["@svgr/webpack"]
-        });
-
-        if (!isServer) {
-            config.plugins = config.plugins.filter(plugin => {
-                return plugin.constructor.name !== 'FontStylesheetGatheringPlugin';
-            });
-        }
 
         return config;
     },

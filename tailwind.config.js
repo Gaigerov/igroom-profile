@@ -5,11 +5,14 @@ export const content = [
 export const theme = {
     extend: {
         borderRadius: {
-            'custom': '16px',
+            'custom': '25px',
         },
         colors: {
             background: 'var(--background)',
             foreground: 'var(--foreground)',
+        },
+        fontFamily: {
+            sans: ['var(--font-sf-pro-display)', 'Arial', 'sans-serif'],
         },
     },
 };

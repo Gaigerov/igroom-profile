@@ -1,21 +1,20 @@
-import {configureStore} from '@reduxjs/toolkit';
-import profileReducer, {ProfileState} from '@/features/profile/api/profileSlice';
+// shared/lib/redux/store.ts
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import profileReducer, { ProfileState } from '@/features/profile/api/profileSlice';
 
 export interface RootState {
-    profile: ProfileState;
+  profile: ProfileState;
 }
 
-export const makeStore = (preloadedState?: RootState) => {
-    return configureStore({
-        reducer: {
-            profile: profileReducer
-        },
-        preloadedState: preloadedState ? preloadedState : undefined,
-        middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware({
-                serializableCheck: false
-            })
-    });
+const rootReducer = combineReducers({
+  profile: profileReducer,
+});
+
+export const makeStore = (preloadedState?: Partial<RootState>) => {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState,
+  });
 };
 
 export type AppStore = ReturnType<typeof makeStore>;

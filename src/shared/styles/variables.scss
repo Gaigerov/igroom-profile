@@ -4,7 +4,7 @@ $secondary-color: #9500FF; // Фиолетовый
 $accent-color: #00CF00; // Оранжевый
 $orange-color: #FFA100;
 $text-color: #171717;
-$text-light: #6B7280;
+$text-light: #434343;
 $background: #EEEEEE;
 $foreground: #FFFFFF;
 $border-color: #E5E7EB;
@@ -27,7 +27,7 @@ $shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
 $shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 $shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 
-$font-size-base: 16px;
+$font-size-base: 20px;
 $font-size-sm: 14px;
 $font-size-md: 18px;
 $font-size-lg: 24px;
@@ -36,3 +36,6 @@ $font-size-xl: 32px;
 $line-height-base: 1.5;
 $line-height-sm: 1.25;
 $line-height-md: 1.75;
+
+$icon-filter-default: brightness(0) saturate(100%) invert(78%) sepia(0%) saturate(706%) hue-rotate(145deg) brightness(90%) contrast(77%);
+$icon-filter-hover: brightness(0) saturate(100%) invert(39%) sepia(96%) saturate(1352%) hue-rotate(89deg) brightness(112%) contrast(110%);

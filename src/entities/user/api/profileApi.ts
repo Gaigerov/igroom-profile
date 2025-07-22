@@ -27,7 +27,9 @@ export const fetchProfileClient = async (): Promise<User> => {
 
         return {
             id: response.data.data.id,
-            avatarUrl: response.data.data.avatar_url || '/icons/avatar.png',
+            avatarUrl: response.data.data.avatar_url
+                ? response.data.data.avatar_url.replace('.svg', '.png')
+                : '/icons/avatar_publicuser.png',
             name: response.data.data.name,
             username: `@${response.data.data.nickname}`,
             city: response.data.data.city?.name || 'Город не указан',

@@ -12,17 +12,14 @@ interface UserStatsProps {
 export const UserStats = ({stats}: UserStatsProps) => (
     <div className={styles.stats}>
         {[
-            {value: stats.months, label: 'месяц в игре'},
+            {value: stats.months + ' месяцев', label: 'в игруме'},
             {value: stats.meets, label: 'встреч'},
             {value: stats.rumers, label: 'румеров'},
-        ].map((item, index, array) => (
-            <React.Fragment key={index}>
-                <div className={styles.statsItem}>
-                    <div className={styles.statsValue}>{item.value}</div>
-                    <div className={styles.statsLabel}>{item.label}</div>
-                </div>
-                {index < array.length - 1 && <div className={styles.divider} />}
-            </React.Fragment>
+        ].map((item, index) => (
+            <div key={index} className={styles.statsItem}>
+                <div className={styles.statsValue}>{item.value}</div>
+                <div className={styles.statsLabel}>{item.label}</div>
+            </div>
         ))}
     </div>
 );

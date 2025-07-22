@@ -1,5 +1,11 @@
 @use "variables" as *;
 
+@mixin flex-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 @mixin flex-center {
     display: flex;
     align-items: center;
@@ -37,6 +43,8 @@
     margin: 0;
     cursor: pointer;
     font-family: inherit;
+    outline: none !important; 
+    box-shadow: none !important; 
 }
 
 @mixin responsive-font($min-size, $max-size) {

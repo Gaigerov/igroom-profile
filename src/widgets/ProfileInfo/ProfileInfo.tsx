@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import React from 'react';
@@ -5,12 +6,11 @@ import {useAppSelector} from '@/shared/lib/redux/hooks';
 import Icon from '@/shared/ui/Icon/Icon';
 import {UserStats} from '@/entities/user/ui/UserStats';
 import styles from './ProfileInfo.module.scss';
-import Image from 'next/image';
+
 
 const ProfileInfo = () => {
     const {data, loading, error} = useAppSelector(state => state.profile);
     const [avatarError, setAvatarError] = React.useState(false);
-
     if (!data && loading) {
         return <div>Загрузка...</div>;
     }
@@ -35,15 +35,13 @@ const ProfileInfo = () => {
             {/* Шапка профиля */}
             <div className={styles.header}>
                 <Icon name="chevronLeft" className={styles.icon} />
-
                 <div className={styles.avatarContainer}>
-                    <Image
-                        src={avatarError ? '/icons/avatar_publicuser.svg' : profileData.avatarUrl}
+                    <img
+                        src={avatarError ? '/icons/avatar_publicuser.png' : profileData.avatarUrl}
                         alt="Аватар"
-                        width={120}
-                        height={120}
+                        width={180}
+                        height={180}
                         className={styles.avatar}
-                        unoptimized={true}
                         loading="eager"
                         onError={() => setAvatarError(true)}
                     />
@@ -69,7 +67,10 @@ const ProfileInfo = () => {
 
             {/* Основная информация */}
             <div className={styles.mainInfo}>
-                <h1 className={styles.name}>румер: {profileData.name}</h1>
+                <h1 className={styles.name}>
+                    <span className={styles.rumerLabel}>румер:</span>
+                    <span className={styles.rumerName}>{profileData.name}</span>
+                </h1>
                 <div className={styles.metaInfo}>
                     <span className={styles.username}>{profileData.username}</span>
                     <span className={styles.time}>завтра 18:00</span>
@@ -86,7 +87,7 @@ const ProfileInfo = () => {
                 </button>
                 <button className={styles.editButton}>
                     <Icon name="settings" className={styles.editIcon} />
-                    <span>РЕДАКТИРОВАТЬ</span>
+                    <span className={styles.editText}>РЕДАКТ</span>
                 </button>
             </div>
 
@@ -129,7 +130,9 @@ const ProfileInfo = () => {
             {/* Истории встреч */}
             <div className={styles.accountSection}>
                 <div className={styles.menuItem}>
-                    <Icon name="time" className={styles.menuIcon} />
+                    <div className={styles.iconContainer}>
+                        <Icon name="time" className={styles.menuIcon} />
+                    </div>
                     <span>ИСТОРИИ ВСТРЕЧ</span>
                 </div>
             </div>
@@ -137,12 +140,16 @@ const ProfileInfo = () => {
             {/* Настройки аккаунта */}
             <div className={styles.accountSection}>
                 <div className={styles.menuItem}>
-                    <Icon name="eyes" className={styles.menuIcon} />
+                    <div className={styles.iconContainer}>
+                        <Icon name="eyes" className={styles.menuIcon} />
+                    </div>
                     <span>Публичный аккаунт</span>
                 </div>
                 <div className={styles.divider} />
                 <div className={styles.menuItem}>
-                    <Icon name="threeLines" className={styles.menuIcon} />
+                    <div className={styles.iconContainer}>
+                        <Icon name="threeLines" className={styles.menuIcon} />
+                    </div>
                     <span>Взрослый</span>
                 </div>
             </div>
@@ -150,31 +157,37 @@ const ProfileInfo = () => {
             {/* Меню профиля */}
             <div className={styles.accountSection}>
                 <div className={styles.menuItem}>
-                    <Icon name="chevronOK" className={styles.menuIcon} />
+                    <div className={styles.iconContainer}>
+                        <Icon name="chevronOK" className={styles.menuIcon} />
+                    </div>
                     <span>Мои подписки</span>
                 </div>
                 <div className={styles.divider} />
                 <div className={styles.menuItem}>
-                    <Icon name="blacklist" className={styles.menuIcon} />
+                    <div className={styles.iconContainer}>
+                        <Icon name="blacklist" className={styles.menuIcon} />
+                    </div>
                     <span>Черный список</span>
                 </div>
                 <div className={styles.divider} />
                 <div className={styles.menuItem}>
-                    <Icon name="flag" className={styles.menuIcon} />
+                    <div className={styles.iconContainer}>
+                        <Icon name="flag" className={styles.menuIcon} />
+                    </div>
                     <span>Закладки</span>
                 </div>
             </div>
 
             {/* Описание и контакты */}
             <div className={styles.bioSection}>
-                <div className={styles.description}>
-                    <p>{profileData.description}</p>
+                <div className={styles.descriptionContainer}>
+                    <p className={styles.descriptionText}>{profileData.description}</p>
                     <Icon name="chevronRight" className={styles.bioIcon} />
                 </div>
                 <div className={styles.contactInfo}>
                     <span>Мой телеграмм</span>
                     <span className={styles.telegramLink}>
-                        {profileData.telegram}
+                        @{profileData.telegram}
                     </span>
                 </div>
             </div>

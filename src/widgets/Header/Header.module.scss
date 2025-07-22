@@ -5,7 +5,6 @@
     @include flex-between;
     height: $header-height;
     padding: 0 $container-padding;
-    border-bottom: 1px solid $border-color;
     background: $background;
     position: sticky;
     top: 0;
@@ -13,16 +12,29 @@
     max-width: 390px;
     margin: 0 auto;
 
-    &__title {
+    .title {
         font-weight: 700;
         @include responsive-font(28px, 18px);
+        color: $primary-color;
     }
 
-    &__menuButton {
+    .menuButton {
         @include button-reset;
-        width: 40px;
-        height: 40px;
-        border: none;
+        width: 30px;
+        height: 30px;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
         @include flex-center;
+
+        .icon {
+            filter: $icon-filter-default;
+            height: max-content;
+            width: max-content;
+        }
+
+        &:hover .icon {
+            filter: $icon-filter-hover;
+        }
     }
 }

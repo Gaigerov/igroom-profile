@@ -2,7 +2,7 @@ import {User} from './types';
 
 export const mockProfile: User = {
     id: '5e800be0-088e-41cb-b549-10ebf4a13591',
-    avatarUrl: '/icons/avatar_publicuser.svg',
+    avatarUrl: '/icons/avatar_publicuser.png',
     name: 'Ваня Петькин',
     username: '@nickname',
     city: 'Краснодар',
